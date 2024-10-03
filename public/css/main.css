@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.text-dark-100 {
+  color: #1A1A1A;
+}
+
+.bg-dark-100 {
+  background-color: #1A1A1A;
+}
+
+.text-dark-200 {
+  color: #666666;
+}
+
+.bg-dark-200 {
+  background-color: #666666;
+}
+
+.text-dark-300 {
+  color: #999999;
+}
+
+.bg-dark-300 {
+  background-color: #999999;
+}
+
+.text-light-100 {
+  color: #FFFFFF;
+}
+
+.bg-light-100 {
+  background-color: #FFFFFF;
+}
+
+.text-light-200 {
+  color: #FAFAFA;
+}
+
+.bg-light-200 {
+  background-color: #FAFAFA;
+}
+
+.text-light-300 {
+  color: #E6E6E6;
+}
+
+.bg-light-300 {
+  background-color: #E6E6E6;
+}
+
+.text-success-100 {
+  color: #19B373;
+}
+
+.bg-success-100 {
+  background-color: #19B373;
+}
+
+.text-success-200 {
+  color: #E9FCF4;
+}
+
+.bg-success-200 {
+  background-color: #E9FCF4;
+}
+
+.text-danger-100 {
+  color: #ED4553;
+}
+
+.bg-danger-100 {
+  background-color: #ED4553;
+}
+
+.text-danger-200 {
+  color: #FCE8E9;
+}
+
+.bg-danger-200 {
+  background-color: #FCE8E9;
+}
+
+.fs-base {
+  font-size: 16px;
+}
+
+.fs-small {
+  font-size: 14px;
+}
+
+.fs-large {
+  font-size: 20px;
+}
+
+.fs-h1 {
+  font-size: 52px;
+}
+
+.fs-h2 {
+  font-size: 36px;
+}
+
+.fs-h3 {
+  font-size: 28px;
+}
+
+.fs-h4 {
+  font-size: 24px;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-regular {
+  font-weight: 400;
+}
+
+.fw-semibold {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --clr-dark-100: #1A1A1A;
+  --clr-dark-200: #666666;
+  --clr-dark-300: #999999;
+  --clr-light-100: #FFFFFF;
+  --clr-light-200: #FAFAFA;
+  --clr-light-300: #E6E6E6;
+  --clr-success-100: #19B373;
+  --clr-success-200: #E9FCF4;
+  --clr-danger-100: #ED4553;
+  --clr-danger-200: #FCE8E9;
+  --fs-base: 16px;
+  --fs-small: 14px;
+  --fs-large: 20px;
+  --fs-h1: 52px;
+  --fs-h2: 36px;
+  --fs-h3: 28px;
+  --fs-h4: 24px;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 500;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter";
+}
+
+/*# sourceMappingURL=main.css.map */
