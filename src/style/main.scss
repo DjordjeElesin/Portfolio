@@ -22,6 +22,10 @@
   @each $weight, $value in $font-weights{
     --fw-#{$weight}: #{$value};
   }
+
+  @each $height, $value in $line-heights{
+    --lh-#{$height}: #{$value};
+  }
 }
 * {
   margin:  0;

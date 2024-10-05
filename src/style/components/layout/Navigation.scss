@@ -1,0 +1,105 @@
+.navigation{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid var(--clr-light-300);
+  
+  .profileContr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 20px;
+
+    .profileImgContr{
+      width: 68px;
+      height: 68px;
+      border-radius: 6px;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .profileInfoContr{
+      line-height: 18px;
+      p{
+        font-size: var(--fs-large);
+        font-weight: var(--fw-bold);
+        text-wrap: nowrap;
+        font-size: var(--fs-base);
+      }
+      span{
+        color: var(--clr-dark-300);
+        font-size: var(--fs-small);
+      }
+    }
+  }
+
+  .break{
+    width: 80%;
+    min-height: 1px;
+    background-color: var(--clr-light-300);
+  }
+
+  ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 100px;
+    gap: 12px;
+    li{
+      font-weight: var(--fw-semibold);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px 0;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      color: var(--clr-dark-200);
+      .iconContr{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 22px;
+        width: 22px;
+        overflow: hidden;
+        
+        div:first-of-type{
+          position: absolute;
+          transform: translateY(0);
+          transition: transform 0.3s ease;
+        }
+        div:last-of-type{
+          position: absolute;
+          transform: translateY(100%);
+          transition: transform 0.3s ease;
+        }
+      }
+      a{
+        width: 100px;
+      }
+
+      &:hover, &.isActiveLink{
+        color: var(--clr-dark-100);
+        background-color: var(--clr-light-400);
+      }
+      &:hover{
+        .iconContr div:first-of-type{
+          transform: translateY(-100%);
+        }
+        .iconContr div:last-of-type{
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

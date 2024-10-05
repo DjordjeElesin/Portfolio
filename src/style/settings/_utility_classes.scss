@@ -24,3 +24,8 @@
     font-weight: $value;
   }
 }
+@each $height, $value in $line-heights{
+  .lh-#{$height}{
+    line-height:  #{$value};
+  }
+}

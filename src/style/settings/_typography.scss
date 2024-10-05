@@ -3,7 +3,7 @@ $font-sizes: (
   small: 14px,
   large: 20px,
   h1: 52px,
-  h2: 36px,
+  h2: 38px,
   h3: 28px,
   h4: 24px,
 );
@@ -14,3 +14,12 @@ $font-weights: (
   semibold: 500,
   bold: 700
 );
+
+$line-heights: (
+  small: 28px,
+  base: 34px,
+  medium: 42px,
+  large: 54px,
+  xl: 68px,
+  xxl: 96px
+)
