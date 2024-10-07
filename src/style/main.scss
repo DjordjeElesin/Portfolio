@@ -38,3 +38,8 @@ body{
   min-height: 100vh;
   font-family: "Inter";
 }
+
+[data-theme='dark'] body{
+  background-color: var(--clr-dark-100);
+  color: --clr-light-100;
+}
