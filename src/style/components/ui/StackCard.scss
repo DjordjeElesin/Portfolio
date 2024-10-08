@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
+  justify-content: start;
   gap: 1rem;
   padding: 10px;
   border-radius: 16px;
   background-color: var(--clr-light-200);
+  color: var(--clr-dark-100);
+  min-width: 270px;
 
   .stackCardHeading{
     display: flex;
@@ -39,5 +41,12 @@
   }
   .stackCardText{
     color: var(--clr-dark-300);
+  }
+}
+
+[data-theme='dark']{
+  .stackCardContr{
+    color: var(--clr-light-100);
+    background-color: var(--clr-dark-400);
   }
 }

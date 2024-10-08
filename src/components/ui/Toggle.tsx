@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Moon, Sun } from '@phosphor-icons/react';
 
 const CustomSwitch = styled(Switch)(({ theme }) => ({
   width: 60,   
@@ -36,7 +35,13 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function Toggle({onChange}: {onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void}) {
+type ToggleProps = {
+  uncheckedLabel: React.ReactNode,
+  checkedLabel: React.ReactNode,
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
+}
+
+export default function Toggle({uncheckedLabel, checkedLabel, onChange}: ToggleProps) {
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,7 +58,7 @@ export default function Toggle({onChange}: {onChange?: (event: React.ChangeEvent
           onChange={handleChange}
         />
       }
-      label={checked ?  <Sun size={20}/>  : <Moon size={20}/>}
+      label={checked ?  checkedLabel  : uncheckedLabel}
     />
   );
 }

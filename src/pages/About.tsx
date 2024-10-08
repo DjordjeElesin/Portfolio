@@ -24,7 +24,7 @@ export default function About() {
           </p>
         </div>
         <div className="imgContr">
-          <img alt="picture of me" src="assets/ProfileBW.jpg" />
+          <img alt="Djordje Elesin" src="assets/ProfileBW.jpg" />
         </div>
       </div>
       <div className="credentialsContr">
@@ -46,11 +46,6 @@ export default function About() {
               Secondary education - Commercialist (2017–2021)
             </p>
           </div>
-          {/* <Link to="/contact">
-            <Button variant="secondary" size="small">
-              Contact Me
-            </Button>
-          </Link> */}
         </div>
         <div className="flex flex-col gap-2 credential">
           <h2 className="fs-h2 fw-bold">Skills</h2>
@@ -62,11 +57,6 @@ export default function About() {
             while maintaining clean and organized code. Have a look at the full
             stack bellow!
           </div>
-          {/* <Link to="/stack">
-            <Button variant="secondary" size="small">
-              View Stack
-            </Button>
-          </Link> */}
         </div>
       </div>
       <div className="aboutButtons">

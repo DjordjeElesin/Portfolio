@@ -20,7 +20,7 @@ export default function StackCard({
           <img alt="stack icon" src={imageSrc} />
         </div>
         <div>
-          <h3 className="fs-large fw-bold text-dark-100">{title}</h3>
+          <h3 className="fs-large fw-bold">{title}</h3>
           <p className="text-dark-300">{subtitle}</p>
         </div>
       </div>

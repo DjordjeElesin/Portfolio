@@ -51,7 +51,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-      <span className="break"></span>
       <ul>
         {navItems.map((item) => (
           <li
@@ -70,7 +69,6 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <span className="break"></span>
     </div>
   );
 }

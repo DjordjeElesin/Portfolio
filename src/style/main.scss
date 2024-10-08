@@ -39,7 +39,7 @@ body{
   font-family: "Inter";
 }
 
-[data-theme='dark'] body{
-  background-color: var(--clr-dark-100);
-  color: --clr-light-100;
+[data-theme='dark']{
+  background-color: var(--clr-dark-100) !important;
+  color: var(--clr-light-100);
 }
