@@ -3,10 +3,11 @@ import Navbar from "../components/layout/Navbar";
 import { Outlet } from "react-router-dom";
 import Status from "../components/ui/Status";
 import Footer from "../components/layout/Footer";
+import '../style/components/layout/Layout.scss'
 
 export default function Layout() {
   return (
-    <div className="flex h-screen">
+    <div className="container">
       <Navbar />
       <main className="p-8 pb-0 w-full">
         <div className="mb-8">
