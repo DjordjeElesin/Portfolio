@@ -113,3 +113,13 @@
     }
   }
 }
+
+[data-theme='dark']{
+  .contactMainContr{
+    .contactFormContr{
+      .input{
+        background-color: var(--clr-dark-400);
+      }
+    }
+  }
+}

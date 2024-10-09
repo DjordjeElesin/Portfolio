@@ -9,7 +9,6 @@ import {
 import CopyButton from "../components/ui/CopyButton";
 import "../style/pages/Contact.scss";
 import { Link } from "react-router-dom";
-import Button from "../components/ui/Button";
 import ContactForm from "../components/ui/ContactForm";
 
 export default function Contact() {
@@ -68,22 +67,6 @@ export default function Contact() {
             <span>Github</span>
           </div>
         </div>
-
-        {/* <div className="contactFormContr">
-          <h2 className="fs-h3 fw-bold">Get in Touch</h2>
-          <div>
-            <input type="text" placeholder="Name" className="input" />
-            <input type="text" placeholder="Email" className="input" />
-          </div>
-          <input
-            type="text"
-            placeholder="Write a message..."
-            className="input message"
-          />
-          <Button size="large" className="messageButton">
-            Send Message
-          </Button>
-        </div> */}
         <ContactForm/>
       </div>
     </div>

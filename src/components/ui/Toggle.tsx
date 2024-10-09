@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import zIndex from "@mui/material/styles/zIndex";
 
-const CustomSwitch = styled(Switch)(({ theme }) => ({
+const CustomSwitch = styled(Switch)(() => ({
   width: 60,
   height: 34,
   padding: 0,
@@ -29,7 +30,7 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     borderRadius: 34 / 2,
-    backgroundColor: "#1A1A1A",
+    backgroundColor: "#000",
     opacity: 1,
     boxSizing: "border-box",
   },
@@ -38,21 +39,23 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
 type ToggleProps = {
   uncheckedLabel: React.ReactNode;
   checkedLabel: React.ReactNode;
+  checked: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function Toggle({
   uncheckedLabel,
   checkedLabel,
+  checked,
   onChange,
 }: ToggleProps) {
-  const [checked, setChecked] = useState(false);
+  /* const [checked, setChecked] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
     if (!onChange) return;
     onChange(event);
-  };
+  }; */
 
   return (
     <FormControlLabel
@@ -60,7 +63,7 @@ export default function Toggle({
       control={
         <CustomSwitch
           checked={checked}
-          onChange={handleChange}
+          onChange={onChange}
         />
       }
       label={checked ? checkedLabel : uncheckedLabel}

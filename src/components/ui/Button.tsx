@@ -7,15 +7,14 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "outline";
   size?: "small" | "medium" | "large";
   className?: string
-  props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function Button({
   children,
   variant = "primary",
   size = "medium",
   className,
-  props,
+  ...props
 }: ButtonProps) {
   return (
     <button className={`btn btn-${variant} btn-${size} ${className}`} {...props}>

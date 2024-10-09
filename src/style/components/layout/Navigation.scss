@@ -8,7 +8,6 @@
   border-bottom: 1px solid var(--clr-light-400);
   background-color: var(--clr-light-100);
   position: sticky;
-  padding: 0 30px;
   .navigationHeading {
     position: relative;
     display: flex;
@@ -17,6 +16,7 @@
     width: 100%;
     height: 100%;
     z-index: 100;
+    padding: 0 30px;
     border-bottom: 1px solid var(--clr-light-400);
     background-color: var(--clr-light-100);
 
@@ -67,7 +67,7 @@
     background-color: var(--clr-light-100);
     border-bottom: 1px solid var(--clr-light-400);
     box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.3);
-
+    transition: all 0.3s ease;
     &.openMenu {
       top: 100%;
     }
@@ -79,6 +79,7 @@
       justify-content: center;
       padding: 1rem 20px;
       gap: 12px;
+      
       li {
         font-weight: var(--fw-semibold);
         width: 100%;
@@ -104,7 +105,7 @@
             height: 22px;
             width: 22px;
             overflow: hidden;
-    
+
             div:first-of-type {
               position: absolute;
               transform: translateY(0);
@@ -115,9 +116,7 @@
               transform: translateY(100%);
               transition: transform 0.3s ease;
             }
-  
           }
-  
         }
         &:hover,
         &.isActiveLink {
@@ -138,7 +137,7 @@
 }
 
 @include breakpoint(medium) {
-  .navigation{
+  .navigation {
     position: sticky;
     top: 0;
     left: 0;
@@ -151,40 +150,39 @@
     flex-direction: column;
     border-bottom: none;
     border-right: 1px solid var(--clr-light-400);
-    
-    .navigationHeading{
+
+    .navigationHeading {
       height: fit-content;
-      .profileContr{
+      .profileContr {
         flex-direction: column;
         padding-bottom: 1rem;
 
-        .profileInfoContr{
-          span{
+        .profileInfoContr {
+          span {
             text-wrap: wrap;
           }
         }
       }
-      .hamburgerMenu{
+      .hamburgerMenu {
         display: none;
       }
     }
-    .navigationList{
+    .navigationList {
       position: relative;
       display: block !important;
       top: 0;
       transition: none;
       box-shadow: none;
-      &.openMenu{
+      &.openMenu {
         top: 0;
       }
-      ul{
+      ul {
         padding: 1rem 0;
 
-        li{
-
-          a{
+        li {
+          a {
             justify-content: center;
-            span{
+            span {
               display: none;
             }
           }
@@ -194,23 +192,23 @@
   }
 }
 
-@include breakpoint(large){
-  .navigation{
-    .navigationHeading{
-      .profileContr{
-        .profileInfoContr{
-          span{
+@include breakpoint(large) {
+  .navigation {
+    .navigationHeading {
+      .profileContr {
+        .profileInfoContr {
+          span {
             text-wrap: nowrap;
           }
         }
       }
     }
-    .navigationList{
-      ul{
-        li{
-          a{
+    .navigationList {
+      ul {
+        li {
+          a {
             justify-content: start;
-            span{
+            span {
               display: block;
             }
           }
@@ -220,30 +218,40 @@
   }
 }
 
-[data-theme='dark'] {
-  .navigation{
+[data-theme="dark"] {
+  .navigation {
     color: var(--clr-light-100);
     background-color: var(--clr-dark-100);
-    border-right: 1px solid var(--clr-dark-400);
-    .navigationHeading{
+    border-bottom: 1px solid var(--clr-dark-400);
+
+    
+    .navigationHeading {
       background-color: var(--clr-dark-100);
       border-bottom: 1px solid var(--clr-dark-400);
-      
     }
-    .navigationList{
+    .navigationList {
       background-color: var(--clr-dark-100);
       border-bottom: 1px solid var(--clr-dark-400);
-      
-      ul{
-        li{
-          &:hover, &.isActiveLink{
+      box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.5);
+
+      ul {
+        li {
+          &:hover,
+          &.isActiveLink {
             color: var(--clr-light-100);
-          background-color: var(--clr-dark-400);
+            background-color: var(--clr-dark-400);
           }
         }
       }
-    
     }
-    
+  }
+  @include breakpoint(medium){
+    .navigation{
+      border-bottom: none;
+      border-right: 1px solid var(--clr-dark-400);
+      .navigationList{
+        box-shadow: none;
+      }
+    }
   }
 }
