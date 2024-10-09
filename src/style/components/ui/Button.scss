@@ -51,6 +51,7 @@
     height: 22px;
     width: 22px;
     overflow: hidden;
+    z-index: -1;
     
     div:first-of-type{
       position: absolute;

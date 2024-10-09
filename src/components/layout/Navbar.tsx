@@ -88,7 +88,6 @@ export default function Navbar() {
                 </div>
                 <span>{item.label}</span>
               </NavLink>
-              {/*               <NavLink to={item.path}>{item.label}</NavLink> */}
             </li>
           ))}
         </ul>

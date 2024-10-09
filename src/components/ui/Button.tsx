@@ -23,10 +23,10 @@ export default function Button({
       {variant === "outline" ? (
         <div className="iconContr">
           <div>
-            <ArrowRight size={20}/>
+            <ArrowRight size={20} className="-z-10"/>
           </div>
           <div>
-            <ArrowRight size={20}/>
+            <ArrowRight size={20} className="-z-10"/>
           </div>
         </div>
       ) : (

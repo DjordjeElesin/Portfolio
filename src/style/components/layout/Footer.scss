@@ -1,4 +1,4 @@
-.footer{
+.footer {
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,14 +8,14 @@
   color: var(--clr-dark-300);
   border-top: 1px solid var(--clr-light-300);
 
-  .copyrightContr{
+  .copyrightContr {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
     gap: 6px;
     font-size: var(--fs-small);
-    div{
+    div {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -23,8 +23,14 @@
     }
   }
 
-  .socialsContr{
+  .socialsContr {
     display: flex;
     gap: 8px;
+  }
+}
+
+[data-theme="dark"] {
+  .footer {
+    border-top: 1px solid var(--clr-dark-400);
   }
 }

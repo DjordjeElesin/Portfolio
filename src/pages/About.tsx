@@ -24,7 +24,7 @@ export default function About() {
           </p>
         </div>
         <div className="imgContr">
-          <img alt="picture of me" src="assets/ProfileBW.jpg" />
+          <img alt="Djordje Elesin" src="assets/ProfileBW.jpg" />
         </div>
       </div>
       <div className="credentialsContr">

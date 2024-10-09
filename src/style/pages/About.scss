@@ -127,3 +127,20 @@
   }
 }
 
+
+[data-theme='dark']{
+  .aboutPageContr{
+    .credentialsContr{
+      .credential{
+        div{
+          background-color: var(--clr-dark-400);
+        }
+      }
+    }
+    .experienceMainContr{
+      .experienceContr{
+        background-color: var(--clr-dark-400);
+      }
+    }
+  }
+}
