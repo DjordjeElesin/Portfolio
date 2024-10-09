@@ -44,6 +44,14 @@ export default function Navbar() {
     },
   ];
 
+  const handleOptionClick = () => {
+    if(isMenuOpen){
+      setIsMenuOpen(false)
+    }else{
+      return
+    }
+  }
+
   return (
     <div className="navigation">
       <div className="navigationHeading">
@@ -80,6 +88,7 @@ export default function Navbar() {
             <li
               key={item.path}
               className={isActive(item.path) ? "isActiveLink" : ""}
+              onClick={handleOptionClick}
             >
               <NavLink to={item.path}>
                 <div className="iconContr">

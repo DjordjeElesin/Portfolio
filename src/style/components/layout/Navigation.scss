@@ -8,6 +8,7 @@
   border-bottom: 1px solid var(--clr-light-400);
   background-color: var(--clr-light-100);
   position: sticky;
+  z-index: 1000;
   .navigationHeading {
     position: relative;
     display: flex;
@@ -236,6 +237,7 @@
 
       ul {
         li {
+          color: var(--clr-dark-300);
           &:hover,
           &.isActiveLink {
             color: var(--clr-light-100);

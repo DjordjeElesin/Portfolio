@@ -117,29 +117,34 @@
         width: 100%;
       }
     }
-    .credentialsContr{
+    .credentialsContr {
       flex-direction: row;
 
-      .credential{
+      .credential {
         width: 50%;
       }
     }
   }
 }
 
-
-[data-theme='dark']{
-  .aboutPageContr{
-    .credentialsContr{
-      .credential{
-        div{
+[data-theme="dark"] {
+  .aboutPageContr {
+    .credentialsContr {
+      .credential {
+        .skills{
+          color: var(--clr-light-400);
+        }
+        div {
           background-color: var(--clr-dark-400);
         }
       }
     }
-    .experienceMainContr{
-      .experienceContr{
+    .experienceMainContr {
+      .experienceContr {
         background-color: var(--clr-dark-400);
+        .expComp {
+          color: var(--clr-light-400);
+        }
       }
     }
   }

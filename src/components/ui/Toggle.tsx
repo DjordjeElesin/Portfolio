@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
-import Switch from "@mui/material/Switch";
+import { styled } from "@mui/material";
+import { Switch } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import zIndex from "@mui/material/styles/zIndex";
 
 const CustomSwitch = styled(Switch)(() => ({
   width: 60,
@@ -49,13 +48,7 @@ export default function Toggle({
   checked,
   onChange,
 }: ToggleProps) {
-  /* const [checked, setChecked] = useState(false);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-    if (!onChange) return;
-    onChange(event);
-  }; */
+  
 
   return (
     <FormControlLabel
