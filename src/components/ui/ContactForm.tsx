@@ -29,6 +29,7 @@ export default function ContactForm() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [messageData, setMessageData] = useState<MessageDataType>(initalData);
   const [errors, setErrors] = useState(initalData);
+  const [validationMessage, setValidationMessage] = useState("");
 
   const handleMessageData = (
     e:
@@ -43,29 +44,43 @@ export default function ContactForm() {
     }));
   };
 
+  const createValidationString = (errors: string[]) => {
+    let validationString;
+    if(errors.length === 1){
+      validationString = errors[0] + " is required."
+    }else if(errors.length === 2){
+      validationString = errors.join('and') + 'are required.'
+    }else{
+      validationString = errors.slice(0,2).join(', ') + ` and ${errors[2]} are required`;
+    }
+  }
+
   const checkMessageData = () => {
     let newErrors: ErrorsType = {};
+
     if (!messageData.name) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Name";
     }
     if (!messageData.email) {
-      newErrors.email = "Email address is required";
+      newErrors.email = "Email";
     }
     if (!messageData.message) {
-      newErrors.name = "Message can not be empty";
+      newErrors.message = "Message";
     }
     setErrors((prevErrors) => ({
       ...prevErrors,
       newErrors,
     }));
-    return  Object.keys(newErrors).length === 0;
+    createValidationString(Object.values(newErrors))
+   
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formRef.current) {
-      if(checkMessageData()){
-        emailjs
+      if (checkMessageData()) {
+        /* emailjs
           .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
             publicKey: PUBLIC_KEY,
           })
@@ -73,9 +88,10 @@ export default function ContactForm() {
             () => console.log("SUCCESS"),
             (err) => console.log("ERROR: ", err)
           );
-      }
-      else{
-        return
+        setMessageData(initalData);
+        setValidationMessage('Email has been sent successfully!'); */
+      } else {
+        return;
       }
     }
   };
@@ -108,6 +124,11 @@ export default function ContactForm() {
         onChange={handleMessageData}
         className="input message"
       />
+      {validationMessage &&
+         <div>
+          {validationMessage}
+        </div>
+      }
       <Button size="large" className="messageButton" type="submit">
         Send Message
       </Button>
