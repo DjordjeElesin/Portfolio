@@ -1,7 +1,7 @@
-import { StackCardType } from "../../utils/data/StackData";
+import { StackType } from '../../utils/types/Types';
 import '../../style/components/ui/StackCard.scss'
 
-type StackCardProps = StackCardType & {
+type StackCardProps = StackType & {
   isExpanded: boolean;
 };
 
