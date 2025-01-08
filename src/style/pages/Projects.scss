@@ -1,0 +1,17 @@
+.projectsPageContr {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+
+  .projectsHeadingContr {
+    width: 50%;
+    line-height: 52px;
+  }
+  .projectsListContr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-bottom: 1rem;
+  }
+}

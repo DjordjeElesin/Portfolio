@@ -1,0 +1,259 @@
+@use "../../settings/mixins" as *;
+
+.navigation {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid var(--clr-light-400);
+  background-color: var(--clr-light-100);
+  position: sticky;
+  z-index: 1000;
+  .navigationHeading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 0 30px;
+    border-bottom: 1px solid var(--clr-light-400);
+    background-color: var(--clr-light-100);
+
+    .profileContr {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 10px;
+      .profileImgContr {
+        width: 68px;
+        height: 68px;
+        border-radius: 6px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .profileInfoContr {
+        line-height: 18px;
+        p {
+          font-size: var(--fs-large);
+          font-weight: var(--fw-bold);
+          text-wrap: nowrap;
+          font-size: var(--fs-base);
+        }
+        span {
+          text-wrap: nowrap;
+          color: var(--clr-dark-300);
+          font-size: var(--fs-small);
+        }
+      }
+    }
+    .hamburgerMenu {
+      transition: all 0.3s ease;
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+  }
+  .navigationList {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--clr-light-100);
+    border-bottom: 1px solid var(--clr-light-400);
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    &.openMenu {
+      top: 100%;
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 20px;
+      gap: 12px;
+      
+      li {
+        font-weight: var(--fw-semibold);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 10px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        color: var(--clr-dark-200);
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 12px;
+          width: 100%;
+          .iconContr {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 22px;
+            width: 22px;
+            overflow: hidden;
+
+            div:first-of-type {
+              position: absolute;
+              transform: translateY(0);
+              transition: transform 0.3s ease;
+            }
+            div:last-of-type {
+              position: absolute;
+              transform: translateY(100%);
+              transition: transform 0.3s ease;
+            }
+          }
+        }
+        &:hover,
+        &.isActiveLink {
+          color: var(--clr-dark-100);
+          background-color: var(--clr-light-400);
+        }
+        &:hover {
+          .iconContr div:first-of-type {
+            transform: translateY(-100%);
+          }
+          .iconContr div:last-of-type {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .navigation {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: auto;
+    height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 1px solid var(--clr-light-400);
+
+    .navigationHeading {
+      height: fit-content;
+      .profileContr {
+        flex-direction: column;
+        padding-bottom: 1rem;
+
+        .profileInfoContr {
+          span {
+            text-wrap: wrap;
+          }
+        }
+      }
+      .hamburgerMenu {
+        display: none;
+      }
+    }
+    .navigationList {
+      position: relative;
+      display: block !important;
+      top: 0;
+      transition: none;
+      box-shadow: none;
+      &.openMenu {
+        top: 0;
+      }
+      ul {
+        padding: 1rem 0;
+
+        li {
+          a {
+            justify-content: center;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .navigation {
+    .navigationHeading {
+      .profileContr {
+        .profileInfoContr {
+          span {
+            text-wrap: nowrap;
+          }
+        }
+      }
+    }
+    .navigationList {
+      ul {
+        li {
+          a {
+            justify-content: start;
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .navigation {
+    color: var(--clr-light-100);
+    background-color: var(--clr-dark-100);
+    border-bottom: 1px solid var(--clr-dark-400);
+
+    
+    .navigationHeading {
+      background-color: var(--clr-dark-100);
+      border-bottom: 1px solid var(--clr-dark-400);
+    }
+    .navigationList {
+      background-color: var(--clr-dark-100);
+      border-bottom: 1px solid var(--clr-dark-400);
+      box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.5);
+
+      ul {
+        li {
+          color: var(--clr-dark-300);
+          &:hover,
+          &.isActiveLink {
+            color: var(--clr-light-100);
+            background-color: var(--clr-dark-400);
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(medium){
+    .navigation{
+      border-bottom: none;
+      border-right: 1px solid var(--clr-dark-400);
+      .navigationList{
+        box-shadow: none;
+      }
+    }
+  }
+}

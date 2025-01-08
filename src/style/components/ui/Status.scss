@@ -1,0 +1,25 @@
+.status{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 16px;
+  border-radius: 10px;
+  font-weight: var(--fw-semibold);
+  text-wrap: nowrap;
+  span{
+    border: 4px solid;
+    border-radius: 50%;
+  }
+}
+
+.available{
+  color: var(--clr-success-100);
+  background-color: var(--clr-success-400);
+}
+
+.unavailable{
+  color: var(--clr-danger-100);
+  background-color: var(--clr-danger-200);
+}

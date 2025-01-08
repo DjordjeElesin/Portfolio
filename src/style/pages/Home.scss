@@ -1,0 +1,91 @@
+@use "../settings/mixins" as *;
+
+.homeContr {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  a {
+    display: flex;
+    width: fit-content;
+  }
+  .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--clr-light-300);
+  }
+
+  .differenceContr {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--clr-light-300);
+
+    div {
+      display: flex;
+      align-items: center;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+  .sectionContr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+
+    .sectionContentContr {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 1rem;
+
+      &.project {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .homeContr {
+    .heading {
+      border-bottom: 1px solid var(--clr-dark-400);
+    }
+    .differenceContr {
+      border-bottom: 1px solid var(--clr-dark-400);
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .homeContr {
+    .sectionContr {
+      .sectionContentContr{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        margin-bottom: 1rem;
+        &.project{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 30px;
+          margin-bottom: 1rem;
+
+        }
+      }
+    }
+  }
+}

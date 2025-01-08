@@ -1,0 +1,26 @@
+$breakpoints: (
+  small: 400px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1280px,
+);
+
+@mixin breakpoint($key){
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size){
+    @content;
+  }
+}
+
+
+
+@mixin boxshadow($size, $color, $opacity: 0.5) {
+  @if $size == small {
+    box-shadow: 0px 5px 15px -7px $color;
+  } @else if $size == medium {
+    box-shadow: 0px 5px 16px -3px $color;
+  } @else if $size == large {
+    box-shadow: 0px 8px 18px 0px $color;
+  }
+}

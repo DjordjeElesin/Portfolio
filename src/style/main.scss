@@ -1,0 +1,48 @@
+@use 'settings/colors' as *;
+@use 'settings/typography' as *;
+@use 'settings/utility_classes' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+  @each $color, $shades in $colors{
+    @each $shade, $value in $shades{
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  @each $size, $value in $font-sizes{
+    --fs-#{$size}: #{$value};
+  }
+
+  @each $weight, $value in $font-weights{
+    --fw-#{$weight}: #{$value};
+  }
+
+  @each $height, $value in $line-heights{
+    --lh-#{$height}: #{$value};
+  }
+}
+* {
+  margin:  0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter";
+  .container{
+    position: relative;
+  }
+}
+
+[data-theme='dark']{
+  background-color: var(--clr-dark-100) !important;
+  color: var(--clr-light-100);
+}

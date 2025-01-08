@@ -1,0 +1,151 @@
+@use "../settings/mixins" as *;
+.aboutPageContr {
+  width: 100%;
+  .aboutHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--clr-light-300);
+
+    .titleContr {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      text-align: start;
+    }
+    .imgContr {
+      width: 100%;
+      height: 500px;
+      border-radius: 16px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .credentialsContr {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    .credential {
+      width: 100%;
+      gap: 1rem;
+
+      a {
+        width: fit-content;
+      }
+      div {
+        background-color: var(--clr-light-300);
+        border-radius: 16px;
+        line-height: var(--lh-small);
+        padding: 10px 16px;
+      }
+      .skills {
+        color: var(--clr-dark-300);
+      }
+    }
+  }
+  .aboutButtons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--clr-light-300);
+
+    div {
+      width: 50%;
+      a {
+        width: fit-content;
+      }
+    }
+  }
+
+  .experienceMainContr {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    .experienceContr {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      gap: 12px;
+      background-color: var(--clr-light-300);
+      border-radius: 16px;
+      padding: 24px 18px;
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .aboutPageContr {
+    .aboutHeading {
+      .titleContr {
+        h1 {
+          font-size: var(--fs-h2);
+          line-height: var(--lh-medium);
+        }
+      }
+    }
+  }
+}
+@include breakpoint(medium) {
+  .aboutPageContr {
+    .aboutHeading {
+      flex-direction: row;
+      .titleContr {
+        width: 100%;
+        h1 {
+          font-size: var(--fs-h1);
+          line-height: var(--lh-large);
+        }
+      }
+      .imgContr {
+        width: 100%;
+      }
+    }
+    .credentialsContr {
+      flex-direction: row;
+
+      .credential {
+        width: 50%;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .aboutPageContr {
+    .credentialsContr {
+      .credential {
+        .skills{
+          color: var(--clr-light-400);
+        }
+        div {
+          background-color: var(--clr-dark-400);
+        }
+      }
+    }
+    .experienceMainContr {
+      .experienceContr {
+        background-color: var(--clr-dark-400);
+        .expComp {
+          color: var(--clr-light-400);
+        }
+      }
+    }
+  }
+}

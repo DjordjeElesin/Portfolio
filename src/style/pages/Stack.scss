@@ -1,0 +1,12 @@
+.stackPageContr{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+  .stacksContr{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  }
+}
